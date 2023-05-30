@@ -7,3 +7,15 @@ CREATE TEABLE pessoas (
 INSERT INTO pessoas (nome, nascimento) VALUES ('Nathally', '1990-05-22')
 INSERT INTO pessoas (nome, nascimento) VALUES ('Pedro', '1995-07-17')
 INSERT INTO pessoas (nome, nascimento) VALUES ('Camila', '1996-01-22')
+
+UPDATE pessoa SET nome = 'Nathally Souza';
+INSERT INTO `pessoa`(`nome`, `nascimento`) VALUES (`Nathaly`, `1990-05-22`), (`Pedro`, `1995-07-17`),(`Camila`, `1996-01-22`);
+
+ALTER TABLE `pessoa`ADD `genero`VARCHAR(1) NOT NULL AFTER `nascimento`;
+UPDATE `pessoa` SET genero = `M`WHERE id = 3;
+UPDATE `pessoa` SET genero = `M` WHERE id = 5;
+UPDATE `pessoa`SET genero = `F` WHERE id = 6;
+
+SELECT COUNT(id), genero FROM pessoa GROUP BY genero;
+
+INSERT INTO `pessoa`(`nome`, `nascimento`, `genero`) VALUES (`Paula`, `1998-10-22`, `F`);
